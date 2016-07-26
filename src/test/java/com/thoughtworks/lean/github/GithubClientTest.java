@@ -8,6 +8,7 @@ import com.thoughtworks.lean.github.Readme;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
+@Ignore
 public class GithubClientTest {
 
     private static final String TOKEN = "e713156e25ce9f5494faec08a47c4b81f9361002";

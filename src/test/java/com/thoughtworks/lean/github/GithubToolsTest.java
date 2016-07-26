@@ -1,11 +1,13 @@
 package com.thoughtworks.lean.github;
 
 import com.thoughtworks.lean.github.GithubTools;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
+@Ignore
 public class GithubToolsTest {
 
     @Test
