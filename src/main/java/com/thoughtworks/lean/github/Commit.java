@@ -5,6 +5,7 @@ import java.util.Date;
 public class Commit {
 
     private String name;
+    private String loginName;
     private String email;
     private String message;
     private String sha;
@@ -72,6 +73,15 @@ public class Commit {
 
     public Commit setHtmlUrl(String htmlUrl) {
         this.htmlUrl = htmlUrl;
+        return this;
+    }
+
+    public String getLoginName() {
+        return loginName;
+    }
+
+    public Commit setLoginName(String loginName) {
+        this.loginName = loginName;
         return this;
     }
 }
