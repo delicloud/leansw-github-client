@@ -9,6 +9,7 @@ public class Commit {
     private String message;
     private String sha;
     private String url;
+    private String htmlUrl;
     private Date date;
 
     public Commit setName(String name) {
@@ -62,6 +63,15 @@ public class Commit {
 
     public Commit setDate(Date date) {
         this.date = date;
+        return this;
+    }
+
+    public String getHtmlUrl() {
+        return htmlUrl;
+    }
+
+    public Commit setHtmlUrl(String htmlUrl) {
+        this.htmlUrl = htmlUrl;
         return this;
     }
 }

@@ -6,13 +6,11 @@ import com.jcabi.http.response.JsonResponse;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.StringUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
-import org.apache.commons.lang.time.DateUtils;
 import org.apache.commons.lang.time.FastDateFormat;
 import org.joda.time.DateTime;
 
 import javax.json.JsonObject;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -81,6 +79,7 @@ public class GithubClient {
                 .setSha(obj.getString("sha"))
                 .setMessage(commit.getString("message"))
                 .setUrl(commit.getString("url"))
+                .setHtmlUrl(commit.getString("html_url"))
                 .setName(author.getString("name"))
                 .setEmail(author.getString("email"))
                 .setDate(DateTime.parse(author.getString("date")).toDate());
