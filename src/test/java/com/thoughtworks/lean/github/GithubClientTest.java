@@ -25,13 +25,13 @@ import static org.junit.Assert.assertThat;
 @Ignore
 public class GithubClientTest {
 
-    private static final String TOKEN = "e713156e25ce9f5494faec08a47c4b81f9361002";
 
     private GithubClient client;
 
     @Before
     public void setUp() {
-        client = new GithubClient("yllithoughtworks","@gh7879971lyl");
+
+        client = new GithubClient(System.getenv("github.username"),System.getenv("github.password"));
     }
 
     @Test

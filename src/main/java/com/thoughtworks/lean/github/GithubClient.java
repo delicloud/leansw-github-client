@@ -79,7 +79,7 @@ public class GithubClient {
                 .setSha(obj.getString("sha"))
                 .setMessage(commit.getString("message"))
                 .setUrl(commit.getString("url"))
-                .setHtmlUrl(commit.getString("html_url"))
+                .setHtmlUrl(obj.getString("html_url"))
                 .setName(author.getString("name"))
                 .setEmail(author.getString("email"))
                 .setDate(DateTime.parse(author.getString("date")).toDate());
