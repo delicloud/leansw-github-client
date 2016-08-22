@@ -46,6 +46,7 @@ public class GithubClientTest {
 
         // then
         assertThat(commits.get(0).getDate(),is(notNullValue()));
+        assertThat(commits.get(0).getLoginName(),is(notNullValue()));
         assertThat(commits.size(), is(greaterThanOrEqualTo(30)));
 
     }

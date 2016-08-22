@@ -75,12 +75,14 @@ public class GithubClient {
     private Commit getCommit(JsonObject obj) {
         JsonObject commit = obj.getJsonObject("commit");
         JsonObject author = commit.getJsonObject("author");
+
         return new Commit()
                 .setSha(obj.getString("sha"))
                 .setMessage(commit.getString("message"))
                 .setUrl(commit.getString("url"))
                 .setHtmlUrl(obj.getString("html_url"))
                 .setName(author.getString("name"))
+                .setLoginName(obj.getJsonObject("author").getString("login"))
                 .setEmail(author.getString("email"))
                 .setDate(DateTime.parse(author.getString("date")).toDate());
     }
