@@ -1,37 +1,25 @@
 package com.thoughtworks.lean.github;
 
+import java.util.Date;
+
 public class Commit {
 
-    private final String name;
-    private final String email;
+    private String name;
+    private String email;
     private String message;
     private String sha;
     private String url;
+    private Date date;
 
-    public Commit(String sha, String mesg, String url, String name, String email) {
-        this.sha = sha;
-        this.message = mesg;
-        this.url = url;
+    public Commit setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public Commit setEmail(String email) {
         this.email = email;
+        return this;
     }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getSha() {
-        return sha;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setSha(String sha) {
-        this.sha = sha;
-    }
-
 
     public String getName() {
         return name;
@@ -41,11 +29,39 @@ public class Commit {
         return email;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public Commit setMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    public String getSha() {
+        return sha;
+    }
+
+    public Commit setSha(String sha) {
+        this.sha = sha;
+        return this;
+    }
+
     public String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
+    public Commit setUrl(String url) {
         this.url = url;
+        return this;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Commit setDate(Date date) {
+        this.date = date;
+        return this;
     }
 }

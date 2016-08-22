@@ -19,6 +19,7 @@ import java.util.stream.StreamSupport;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 @Ignore
@@ -30,7 +31,7 @@ public class GithubClientTest {
 
     @Before
     public void setUp() {
-        client = new GithubClient(TOKEN);
+        client = new GithubClient("yllithoughtworks","@gh7879971lyl");
     }
 
     @Test
@@ -44,6 +45,7 @@ public class GithubClientTest {
         List<Commit> commits = client.commits("tw-leansw", "ansible-scripts", since, until);
 
         // then
+        assertThat(commits.get(0).getDate(),is(notNullValue()));
         assertThat(commits.size(), is(greaterThanOrEqualTo(30)));
 
     }
